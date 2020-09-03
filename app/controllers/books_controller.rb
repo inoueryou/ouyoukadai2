@@ -2,6 +2,7 @@ class BooksController < ApplicationController
 before_action :authenticate_user!, only: [:update, :edit, :show, :index]
   def show
     @book = Book.find(params[:id])
+    @book_comment = BookComment.new
   end
 
   def index
